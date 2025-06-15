@@ -1,75 +1,36 @@
-# React + TypeScript + Vite
+# Color Picker – Vite + React + TypeScript
 
-This is a simple and modern web application for å velge og forhåndsvise farger.
+A minimalist, Japandi-inspired web app for selecting, generating, and previewing colors.
 
-## Funksjoner
-- Velg en farge med RGB-slidere
-- Klikk "Legg til" for å lagre fargen
-- Forhåndsvisning av alle valgte farger i et rutenett (100x100px per farge)
-- Responsivt og rent design
+## Features
+- Select a color using a color picker (SketchPicker)
+- Add the selected color to your palette (duplicates are not allowed)
+- Remove individual colors by clicking or using the trash icon on hover
+- Remove all colors with one click
+- Generate a palette of colors based on adjustable hue and saturation steps (with confirmation modal)
+- The first color in the grid is always white; the rest are sorted by hue
+- Color previews are 100x100px, with subtle border and shadow
+- Responsive grid, up to 8 colors per row, always centered
+- Color picker, add/remove buttons, and color generation accordion are visually grouped and have the same fixed width
+- Footer with copyright and current year always at the bottom
+- Minimalist, Japandi-inspired design: warm, light earth tones, soft contrasts, rounded corners, and clean layouts
 
-## Kom i gang
-
-1. Installer avhengigheter:
+## Usage
+1. Install dependencies:
    ```bash
    npm install
    ```
-2. Start utviklingsserveren:
+2. Start the development server:
    ```bash
    npm run dev
    ```
-3. Åpne nettleseren på [http://localhost:5173](http://localhost:5173)
+3. Open your browser at [http://localhost:5173](http://localhost:5173)
 
-## Prosjektstruktur
-- `src/App.tsx`: Hovedkomponent med fargevelger og forhåndsvisning
-- `src/App.css`: Stiler for UI og grid
+## Project Structure
+- `src/App.tsx`: Main React component and logic
+- `src/App.css`: Custom minimalist/Japandi CSS
+- `.github/copilot-instructions.md`: Copilot instructions for consistent code style
 
 ---
 
-Dette prosjektet bruker Vite, React og TypeScript.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+© {current year} Simen Samuelsen
