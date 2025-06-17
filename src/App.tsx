@@ -40,14 +40,6 @@ function hslToRgb(h: number, s: number, v: number): Color {
   };
 }
 
-function getSaturation({ r, g, b }: Color): number {
-  const max = Math.max(r, g, b) / 255;
-  const min = Math.min(r, g, b) / 255;
-  if (max === min) return 0;
-  const l = (max + min) / 2;
-  return l === 0 || l === 1 ? 0 : (max - min) / (1 - Math.abs(2 * l - 1));
-}
-
 function getHue({ r, g, b }: Color): number {
   const rNorm = r / 255, gNorm = g / 255, bNorm = b / 255;
   const max = Math.max(rNorm, gNorm, bNorm);
@@ -71,7 +63,7 @@ function App() {
   const [hueSteps, setHueSteps] = useState(12);
   const [satSteps, setSatSteps] = useState(2);
   const [showModal, setShowModal] = useState(false);
-  const [pendingGenerate, setPendingGenerate] = useState(false);
+  const [, setPendingGenerate] = useState(false);
   const [accordionOpen, setAccordionOpen] = useState(false);
 
   const handleColorChange = (c: ColorResult) => {
